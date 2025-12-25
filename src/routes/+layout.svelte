@@ -10,10 +10,15 @@
 </svelte:head>
 
 <header class="light">
-    <h2>Home</h2>
-    <h2>Listings</h2>
-    <h2>Custom</h2>
-    <h2>About</h2>
+    <h1>Truly Forever Gems</h1>
+    <hr />
+    <br />
+    <nav>
+        <h2>Home</h2>
+        <h2>Listings</h2>
+        <h2>Custom</h2>
+        <h2>About</h2>
+    </nav>
 </header>
 <main class="light">
     {@render children()}
