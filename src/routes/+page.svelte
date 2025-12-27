@@ -55,6 +55,10 @@
     </div>
 </div>
 
+<svelte:head>
+    <title>Home | Truly Forever Gems</title>
+</svelte:head>
+
 <style>
     .temp {
         display: flex;
