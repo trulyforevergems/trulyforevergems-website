@@ -58,6 +58,14 @@ nav {
     justify-content: space-around;
 }
 
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 main {
     /* background-color: var(--md-sys-color-primary); */
     background-image: url("/assets/forever-gems-splash.png");

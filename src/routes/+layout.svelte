@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { resolve } from "$app/paths";
     import favicon from "$lib/assets/favicon.svg";
     import "../app.css";
 
@@ -14,10 +15,10 @@
     <hr />
     <br />
     <nav>
-        <h2>Home</h2>
-        <h2>Listings</h2>
-        <h2>Custom</h2>
-        <h2>About</h2>
+        <h2><a href={resolve("/")}>Home</a></h2>
+        <h2><a href={resolve("/listings")}>Listings</a></h2>
+        <h2><a href={resolve("/custom")}>Custom</a></h2>
+        <h2><a href={resolve("/about")}>About</a></h2>
     </nav>
 </header>
 <main class="dark">
