@@ -9,7 +9,7 @@
     <link rel="icon" href={favicon} />
 </svelte:head>
 
-<header class="light">
+<header class="dark">
     <h1>Truly Forever Gems</h1>
     <hr />
     <br />
@@ -20,10 +20,10 @@
         <h2>About</h2>
     </nav>
 </header>
-<main class="light">
+<main class="dark">
     {@render children()}
 </main>
-<footer class="light">
+<footer class="dark">
     <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos saepe
         dolorem provident culpa distinctio ea quis voluptates molestias
