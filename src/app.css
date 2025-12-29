@@ -67,11 +67,7 @@ a:hover {
 }
 
 main {
-    /* background-color: var(--md-sys-color-primary); */
-    background-image: url("/assets/forever-gems-splash.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: var(--md-sys-color-surface);
 
     min-height: 80vh;
     padding: 5vh 5vw;

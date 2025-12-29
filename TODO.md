@@ -1,0 +1,3 @@
+- [ ] Adjust size of headings for different screen sizes
+- [ ] Collapsable navbar?
+- [X] Remove background image from non-home routes
