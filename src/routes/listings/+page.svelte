@@ -15,7 +15,8 @@
 
 <style>
     .cards-container {
-        margin: 0 5vw;
+        margin: 0 2vw;
+        padding: 5vh 0;
 
         display: grid;
         max-width: 1200px;
@@ -24,7 +25,8 @@
             minmax(clamp(160px, 25vw, 240px), 1fr)
         );
         justify-items: stretch;
-        column-gap: 2vw;
+        /* Row and column gap should be the same. */
+        column-gap: 2vh;
         row-gap: 2vh;
     }
 </style>

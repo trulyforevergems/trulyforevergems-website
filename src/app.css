@@ -70,7 +70,6 @@ main {
     background-color: var(--md-sys-color-surface);
 
     min-height: 80vh;
-    padding: 5vh 0;
 }
 
 footer {

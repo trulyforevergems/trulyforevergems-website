@@ -44,7 +44,8 @@
 
 <style>
     .background-container {
-        /* background-color: var(--md-sys-color-primary); */
+        padding: 5vh 0;
+
         background-image: url("/assets/forever-gems-splash.png");
         background-position: center;
         background-size: cover;

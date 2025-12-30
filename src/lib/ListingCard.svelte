@@ -20,10 +20,23 @@
         align-items: center;
         justify-content: center;
         font-size: 1.5rem;
+
+        background-color: black;
+        color: var(--md-sys-color-primary-container);
+    }
+
+    p:first-child {
+        border-bottom: 1px solid white;
+    }
+
+    p:last-child {
+        border-top: 1px solid white;
     }
 
     .listing-card {
-        background-color: var(--md-sys-color-secondary-container);
+        /* background-color: var(--md-sys-color-secondary-container); */
+        border: 1px solid white;
+        /* border:; */
         overflow: hidden;
     }
 
