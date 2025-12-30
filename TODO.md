@@ -1,3 +1,11 @@
+# General
 - [ ] Adjust size of headings for different screen sizes
 - [ ] Collapsable navbar?
-- [X] Remove background image from non-home routes
+- [ ] Implement cart
+- [ ] Firebase or Supabase
+
+# Listings
+- [ ] Color customization for each design
+
+# Custom
+- [ ] Implement custom beads selector
