@@ -1,0 +1,81 @@
+/* fonts import */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap");
+/* theme import */
+@import "./styles/light.css";
+@import "./styles/dark.css";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--md-sys-color-on-primary);
+    text-align: center;
+
+    padding-bottom: 2vh;
+
+    font-family: "Style Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    color: var(--md-sys-color-on-primary);
+
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    line-height: 2;
+}
+
+header {
+    background-color: var(--md-sys-color-primary-container);
+
+    min-height: 10vh;
+    padding: 2vh;
+}
+
+header * {
+    color: var(--md-sys-color-on-primary-container);
+}
+
+header>hr {
+    border: 1px solid var(--md-sys-color-on-primary-container);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background-color: var(--md-sys-color-surface);
+
+    min-height: 80vh;
+}
+
+footer {
+    background-color: var(--md-sys-color-secondary);
+
+    min-height: 10vh;
+
+    padding: 2vh 5vw;
+}
