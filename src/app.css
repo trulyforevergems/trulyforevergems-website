@@ -18,7 +18,7 @@ h6 {
     color: var(--md-sys-color-on-primary);
     text-align: center;
 
-    padding-bottom: 2vh;
+    padding: 1vh 0;
 
     font-family: "Style Script", cursive;
     font-weight: 400;
@@ -40,7 +40,7 @@ header {
     background-color: var(--md-sys-color-primary-container);
 
     min-height: 10vh;
-    padding: 2vh;
+    padding: 0 2vw;
 }
 
 header * {

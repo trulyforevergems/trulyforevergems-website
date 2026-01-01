@@ -1,6 +1,7 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
     import favicon from "$lib/assets/favicon.svg";
+    import shopping_cart_icon from "$lib/assets/shopping_cart.svg";
     import "../app.css";
 
     let { children } = $props();
@@ -11,9 +12,13 @@
 </svelte:head>
 
 <header class="dark">
-    <h1>Truly Forever Gems</h1>
+    <div id="header-top">
+        <h1><a href={resolve("/")}>Truly Forever Gems</a></h1>
+        <a href={resolve("/cart")} id="shopping-cart-icon-link">
+            <img src={shopping_cart_icon} alt="Shopping Cart" />
+        </a>
+    </div>
     <hr />
-    <br />
     <nav>
         <h2><a href={resolve("/")}>Home</a></h2>
         <h2><a href={resolve("/listings")}>Listings</a></h2>
@@ -32,3 +37,21 @@
         deserunt omnis? Eaque.
     </p>
 </footer>
+
+<style>
+    #header-top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #shopping-cart-icon-link {
+        position: absolute;
+        right: 10vw;
+    }
+
+    #shopping-cart-icon-link > img {
+        width: 150%;
+    }
+</style>
