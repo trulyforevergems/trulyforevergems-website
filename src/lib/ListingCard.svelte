@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { type Listing, TestListings } from "$lib";
+    import { type Listing } from "./types";
 
-    const { name, productId, imageUrl, price }: Listing = $props();
+    const { name, imageUrl, price }: Listing = $props();
 </script>
 
 <div class="listing-card dark">

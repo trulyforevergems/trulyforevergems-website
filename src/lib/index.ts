@@ -2,15 +2,9 @@ import test_image_one from "$lib/assets/test_image_one.jpg";
 import test_image_two from "$lib/assets/test_image_two.jpg";
 import test_image_three from "$lib/assets/test_image_three.jpg";
 import test_image_four from "$lib/assets/test_image_four.jpg";
+import type { CartItem, Listing } from "./types";
 
-export interface Listing {
-    name: string;
-    productId: string;
-    imageUrl: string;
-    price: string;
-}
-
-export let TestListings = [
+export const TestListings: Listing[] = [
     {
         name: "Test 1",
         productId: "0001",
@@ -34,5 +28,24 @@ export let TestListings = [
         productId: "0004",
         imageUrl: test_image_four,
         price: "$100.00",
+    },
+];
+
+export const TestCart: CartItem[] = [
+    {
+        listing: TestListings[0],
+        quantity: 1,
+    },
+    {
+        listing: TestListings[1],
+        quantity: 2,
+    },
+    {
+        listing: TestListings[2],
+        quantity: 3,
+    },
+    {
+        listing: TestListings[3],
+        quantity: 4,
     },
 ];
