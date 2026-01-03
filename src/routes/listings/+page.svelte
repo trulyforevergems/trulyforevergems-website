@@ -8,8 +8,8 @@
 </svelte:head>
 
 <div class="cards-container">
-    {#each TestListings as { name, productId, imageUrl, price }}
-        <ListingCard {name} {productId} {imageUrl} {price} />
+    {#each TestListings as { name, productId, imageUrl, price, colors }}
+        <ListingCard {name} {productId} {imageUrl} {price} {colors} />
     {/each}
 </div>
 

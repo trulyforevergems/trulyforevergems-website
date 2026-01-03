@@ -7,6 +7,7 @@
 
 # Listings
 - [ ] Color customization for each design
+    - [ ] Limit which colors can be selected
 
 # Custom
 - [ ] Implement custom beads selector

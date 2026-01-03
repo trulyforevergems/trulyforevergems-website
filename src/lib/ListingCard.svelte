@@ -1,13 +1,16 @@
 <script lang="ts">
+    import { resolve } from "$app/paths";
     import { type Listing } from "./types";
 
-    const { name, imageUrl, price }: Listing = $props();
+    const { name, productId, imageUrl, price }: Listing = $props();
 </script>
 
 <div class="listing-card dark">
     <p>{name}</p>
     <div class="image-container">
-        <img src={imageUrl} alt="image for {name}" />
+        <a href={resolve(`/listings/${productId}`)}>
+            <img src={imageUrl} alt="image for {name}" />
+        </a>
     </div>
     <p>{price}</p>
 </div>
@@ -46,10 +49,16 @@
         overflow: hidden;
     }
 
-    .image-container > img {
+    .image-container:hover {
+        opacity: 0.5;
+    }
+
+    .image-container img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         object-position: center;
+
+        cursor: pointer;
     }
 </style>
