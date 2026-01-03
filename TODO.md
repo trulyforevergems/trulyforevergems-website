@@ -4,14 +4,10 @@
 - [ ] Supabase
 - [ ] Move to Vercel
 - [ ] Make website mobile friendly
+- [ ] Remove customization features
 
 # Listings
-- [ ] Color customization for each design
-    - [ ] Limit which colors can be selected
-
-# Custom
-- [ ] Implement custom beads selector
+- [ ] Add items to cart
 
 # Cart
 - [ ] Add "total" section
-- [ ] Display when target color is different from default color.
