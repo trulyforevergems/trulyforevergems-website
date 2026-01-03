@@ -10,24 +10,28 @@ export const TestListings: Listing[] = [
         productId: "0001",
         imageUrl: test_image_one,
         price: "$25.00",
+        colors: ["#F48694", "#F6DF69", "#F5C5B9"],
     },
     {
         name: "Test 2",
         productId: "0002",
         imageUrl: test_image_two,
         price: "$50.00",
+        colors: ["#773F95", "#E3ABDE"],
     },
     {
         name: "Test 3",
         productId: "0003",
         imageUrl: test_image_three,
         price: "$75.00",
+        colors: ["#E7C653", "#E9A897", "#FEEDD8"],
     },
     {
         name: "Test 4",
         productId: "0004",
         imageUrl: test_image_four,
         price: "$100.00",
+        colors: ["#C24058", "#F2C0D3", "#EDEFF5"],
     },
 ];
 

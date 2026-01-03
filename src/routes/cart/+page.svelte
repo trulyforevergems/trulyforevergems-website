@@ -30,7 +30,8 @@
 
     #cart-items-container {
         background-color: var(--md-sys-color-inverse-surface);
-        width: 80%;
+        padding: 2vh 2vw;
+        width: 90%;
     }
 
     #cart-items-heading {

@@ -2,7 +2,7 @@
     import type { CartItem } from "./types";
 
     let { listing, quantity }: CartItem = $props();
-    const { name, imageUrl, price } = $derived(listing);
+    const { name, imageUrl, price, colors } = $derived(listing);
 
     function decrease_quantity() {
         quantity = Math.max(quantity - 1, 1);
@@ -26,6 +26,23 @@
     </div>
     <div class="name-and-style-container">
         <p>{name}</p>
+        <ul class="colors-list">
+            {#each colors as color, index}
+                <li class="colors-list-item">
+                    <label for="from-color-num-{index}"
+                        >Color #{index + 1}:&ensp;
+                    </label>
+                    <input
+                        type="color"
+                        name="from-color-num-{index}"
+                        value={color}
+                        disabled
+                    />
+                    <span>&ensp;&rightarrow;&ensp;</span>
+                    <input type="color" value="#FFFF00" disabled />
+                </li>
+            {/each}
+        </ul>
     </div>
     <p>{price}</p>
 </div>
@@ -49,6 +66,7 @@
         width: 50%;
         aspect-ratio: 1 / 1;
         overflow: hidden;
+        border: 1px solid var(--md-sys-color-inverse-on-surface);
     }
 
     .image-container > img {
@@ -72,5 +90,32 @@
 
     button {
         cursor: pointer;
+        border-radius: 50px;
+    }
+
+    .name-and-style-container {
+        align-self: baseline;
+    }
+
+    .name-and-style-container p {
+        font-size: 2em;
+    }
+
+    .colors-list {
+        padding-left: 3vw;
+    }
+
+    .colors-list-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    input[type="color"] {
+        border: none;
+    }
+
+    li + li {
+        margin-top: 2vh;
     }
 </style>

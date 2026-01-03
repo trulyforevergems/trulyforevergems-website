@@ -2,6 +2,7 @@ export interface Listing {
     name: string;
     productId: string;
     imageUrl: string;
+    colors: string[];
     price: string;
 }
 
