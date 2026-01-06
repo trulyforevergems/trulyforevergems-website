@@ -8,11 +8,12 @@
 <div class="listing-card dark">
     <p>{name}</p>
     <div class="image-container">
-        <a href={resolve(`/listings/${productId}`)}>
-            <img src={imageUrl} alt="image for {name}" />
-        </a>
+        <img src={imageUrl} alt="image for {name}" />
     </div>
-    <p>{price}</p>
+    <div class="price-and-button-container">
+        <p>{price}</p>
+        <button type="button">Add to Cart</button>
+    </div>
 </div>
 
 <style>
@@ -28,14 +29,6 @@
         color: var(--md-sys-color-primary-container);
     }
 
-    p:first-child {
-        border-bottom: 1px solid white;
-    }
-
-    p:last-child {
-        border-top: 1px solid white;
-    }
-
     .listing-card {
         /* background-color: var(--md-sys-color-secondary-container); */
         border: 1px solid white;
@@ -47,10 +40,9 @@
         width: 100%;
         aspect-ratio: 1 / 1;
         overflow: hidden;
-    }
 
-    .image-container:hover {
-        opacity: 0.5;
+        border-top: 1px solid white;
+        border-bottom: 1px solid white;
     }
 
     .image-container img {
@@ -58,6 +50,20 @@
         height: 100%;
         object-fit: cover;
         object-position: center;
+
+        /* cursor: pointer; */
+    }
+
+    .price-and-button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        margin-top: 1vh;
+        margin-bottom: 2vh;
+        padding: 1vh;
 
         cursor: pointer;
     }

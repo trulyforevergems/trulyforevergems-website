@@ -4,7 +4,7 @@
 - [ ] Supabase
 - [ ] Move to Vercel
 - [ ] Make website mobile friendly
-- [ ] Remove customization features
+- [X] Remove customization features
 
 # Listings
 - [ ] Add items to cart

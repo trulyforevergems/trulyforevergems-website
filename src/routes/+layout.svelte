@@ -22,7 +22,7 @@
     <nav>
         <h2><a href={resolve("/")}>Home</a></h2>
         <h2><a href={resolve("/listings")}>Listings</a></h2>
-        <h2><a href={resolve("/custom")}>Custom</a></h2>
+        <!-- <h2><a href={resolve("/custom")}>Custom</a></h2> -->
         <h2><a href={resolve("/about")}>About</a></h2>
     </nav>
 </header>
