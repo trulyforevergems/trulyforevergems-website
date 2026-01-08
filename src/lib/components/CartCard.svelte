@@ -1,5 +1,7 @@
 <script lang="ts">
     import type { CartItem } from "../code/types";
+    import increase_icon from "$lib/assets/icons/add_1_icon.svg";
+    import decrease_icon from "$lib/assets/icons/remove-icon.svg";
 
     let { listing, quantity }: CartItem = $props();
     const { name, imageUrl, price, colors } = $derived(listing);
@@ -32,9 +34,13 @@
             <img src={imageUrl} alt="Image for {name}" />
         </div>
         <div class="quantity-buttons-container">
-            <button type="button" onclick={decrease_quantity}> - </button>
+            <button type="button" onclick={decrease_quantity}>
+                <img src={decrease_icon} alt="Decrease Icon" />
+            </button>
             <span>{quantity}</span>
-            <button type="button" onclick={increase_quantity}> + </button>
+            <button type="button" onclick={increase_quantity}>
+                <img src={increase_icon} alt="Increase Icon" />
+            </button>
         </div>
     </div>
     <div class="name-and-style-container">
