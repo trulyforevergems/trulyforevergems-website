@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { type Listing } from "./types";
+    import { type Listing } from "../code/types";
 
     const { name, imageUrl, price }: Listing = $props();
     let quantity = $state(0);

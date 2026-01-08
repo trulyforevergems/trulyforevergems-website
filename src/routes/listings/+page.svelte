@@ -1,6 +1,6 @@
 <script>
-    import { TestListings } from "$lib";
-    import ListingCard from "$lib/ListingCard.svelte";
+    import { TestListings } from "$lib/code";
+    import ListingCard from "$lib/components/ListingCard.svelte";
 </script>
 
 <svelte:head>

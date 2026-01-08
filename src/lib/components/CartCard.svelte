@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { CartItem } from "./types";
+    import type { CartItem } from "../code/types";
 
     let { listing, quantity }: CartItem = $props();
     const { name, imageUrl, price, colors } = $derived(listing);

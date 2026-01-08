@@ -1,7 +1,7 @@
-import test_image_one from "$lib/assets/test_image_one.jpg";
-import test_image_two from "$lib/assets/test_image_two.jpg";
-import test_image_three from "$lib/assets/test_image_three.jpg";
-import test_image_four from "$lib/assets/test_image_four.jpg";
+import test_image_one from "$lib/assets/images/test_image_one.jpg";
+import test_image_two from "$lib/assets/images/test_image_two.jpg";
+import test_image_three from "$lib/assets/images/test_image_three.jpg";
+import test_image_four from "$lib/assets/images/test_image_four.jpg";
 import type { CartItem, Listing } from "./types";
 
 export const TestListings: Listing[] = [

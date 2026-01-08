@@ -46,7 +46,7 @@
     .background-container {
         padding: 5vh 0;
 
-        background-image: url("/assets/forever-gems-splash.png");
+        background-image: url("$lib/assets/images/forever-gems-splash.png");
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;

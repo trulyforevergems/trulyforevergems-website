@@ -1,6 +1,6 @@
 <script>
-    import { TestCart } from "$lib";
-    import CartCard from "$lib/CartCard.svelte";
+    import { TestCart } from "$lib/code";
+    import CartCard from "$lib/components/CartCard.svelte";
 </script>
 
 <div id="content-container">

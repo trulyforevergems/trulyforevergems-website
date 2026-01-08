@@ -1,8 +1,8 @@
 <script lang="ts">
     import { resolve } from "$app/paths";
-    import favicon from "$lib/assets/favicon.svg";
-    import shopping_cart_icon from "$lib/assets/shopping_cart.svg";
-    import account_icon from "$lib/assets/account.svg";
+    import favicon from "$lib/assets/icons/favicon.svg";
+    import shopping_cart_icon from "$lib/assets/icons/shopping_cart.svg";
+    import account_icon from "$lib/assets/icons/account.svg";
     import "../app.css";
 
     let { children } = $props();
