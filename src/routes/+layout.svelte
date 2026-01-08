@@ -2,6 +2,7 @@
     import { resolve } from "$app/paths";
     import favicon from "$lib/assets/favicon.svg";
     import shopping_cart_icon from "$lib/assets/shopping_cart.svg";
+    import account_icon from "$lib/assets/account.svg";
     import "../app.css";
 
     let { children } = $props();
@@ -14,15 +15,19 @@
 <header class="dark">
     <div id="header-top">
         <h1><a href={resolve("/")}>Truly Forever Gems</a></h1>
-        <a href={resolve("/cart")} id="shopping-cart-icon-link">
-            <img src={shopping_cart_icon} alt="Shopping Cart" />
-        </a>
+        <div id="icons-container">
+            <a href={resolve("/cart")} class="icon-link">
+                <img src={shopping_cart_icon} alt="Shopping Cart Icon" />
+            </a>
+            <a href={resolve("/account")} class="icon-link">
+                <img src={account_icon} alt="Account Icon" />
+            </a>
+        </div>
     </div>
     <hr />
     <nav>
         <h2><a href={resolve("/")}>Home</a></h2>
         <h2><a href={resolve("/listings")}>Listings</a></h2>
-        <!-- <h2><a href={resolve("/custom")}>Custom</a></h2> -->
         <h2><a href={resolve("/about")}>About</a></h2>
     </nav>
 </header>
@@ -46,12 +51,18 @@
         justify-content: center;
     }
 
-    #shopping-cart-icon-link {
+    #icons-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 4vw;
+
         position: absolute;
-        right: 10vw;
+        right: 8vw;
+
+        width: 10%;
     }
 
-    #shopping-cart-icon-link > img {
-        width: 150%;
+    #icons-container img {
+        width: max(75%, 25px);
     }
 </style>
