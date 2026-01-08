@@ -11,6 +11,19 @@
     function increase_quantity() {
         quantity = Math.min(quantity + 1, 10);
     }
+
+    function number_to_ordinal(num: number): string {
+        switch (num) {
+            case 1:
+                return "Primary";
+            case 2:
+                return "Secondary";
+            case 3:
+                return "Tertiary";
+            default:
+                return String(num);
+        }
+    }
 </script>
 
 <div class="cart-card">
@@ -26,11 +39,11 @@
     </div>
     <div class="name-and-style-container">
         <p>{name}</p>
-        <ul class="colors-list">
+        <div class="colors-list">
             {#each colors as color, index}
-                <li class="colors-list-item">
+                <div class="colors-list-item">
                     <label for="from-color-num-{index}"
-                        >Color #{index + 1}:&ensp;
+                        >{number_to_ordinal(index + 1)} Color:&ensp;
                     </label>
                     <input
                         type="color"
@@ -38,11 +51,9 @@
                         value={color}
                         disabled
                     />
-                    <span>&ensp;&rightarrow;&ensp;</span>
-                    <input type="color" value="#FFFF00" disabled />
-                </li>
+                </div>
             {/each}
-        </ul>
+        </div>
     </div>
     <p>{price}</p>
 </div>
@@ -106,16 +117,12 @@
     }
 
     .colors-list-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
     }
 
-    input[type="color"] {
+    .colors-list-item input[type="color"] {
         border: none;
-    }
-
-    li + li {
-        margin-top: 2vh;
+        width: 20%;
     }
 </style>

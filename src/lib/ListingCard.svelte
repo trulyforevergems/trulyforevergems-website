@@ -1,12 +1,17 @@
 <script lang="ts">
-    import { resolve } from "$app/paths";
     import { type Listing } from "./types";
 
-    const { name, productId, imageUrl, price }: Listing = $props();
+    const { name, imageUrl, price }: Listing = $props();
     let quantity = $state(0);
 
-    function add_to_cart() {
-        quantity++;
+    function decrease_quantity() {
+        /* The UI should make it impossible for quantity to go below zero, but this is just extra
+        insurance. */
+        quantity = Math.max(0, quantity - 1);
+    }
+
+    function increase_quantity() {
+        quantity = Math.min(10, quantity + 1);
     }
 </script>
 
@@ -18,12 +23,14 @@
     <div class="price-and-button-container">
         <p>{price}</p>
         {#if quantity == 0}
-            <button type="button" onclick={add_to_cart}> Add to Cart </button>
+            <button type="button" onclick={increase_quantity}>
+                Add to Cart
+            </button>
         {:else}
             <div class="quantity-selection-container">
-                <button type="button" onclick={() => quantity--}>-</button>
+                <button type="button" onclick={decrease_quantity}>-</button>
                 <p>{quantity}</p>
-                <button type="button" onclick={() => quantity++}>+</button>
+                <button type="button" onclick={increase_quantity}>+</button>
             </div>
         {/if}
     </div>
