@@ -2,6 +2,7 @@
     import { type Listing } from "$lib/code/types";
     import increase_icon from "$lib/assets/icons/add_1_icon.svg";
     import decrease_icon from "$lib/assets/icons/remove-icon.svg";
+    import { getFormattedPrice } from "$lib/code";
 
     const { name, imageUrl, price }: Listing = $props();
     let quantity = $state(0);
@@ -23,7 +24,7 @@
         <img src={imageUrl} alt="image for {name}" />
     </div>
     <div class="price-and-button-container">
-        <p>{price}</p>
+        <p>{getFormattedPrice(price)}</p>
         {#if quantity == 0}
             <button type="button" onclick={increase_quantity}>
                 Add to Cart

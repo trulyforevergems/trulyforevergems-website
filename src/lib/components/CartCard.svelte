@@ -3,7 +3,7 @@
     import increase_icon from "$lib/assets/icons/add_1_icon.svg";
     import decrease_icon from "$lib/assets/icons/remove-icon.svg";
     import trash_icon from "$lib/assets/icons/trash_can.svg";
-    import { TestCart } from "$lib/code";
+    import { getFormattedPrice, TestCart } from "$lib/code";
 
     let { listing, quantity }: CartItem = $props();
     const { name, imageUrl, price, colors } = $derived(listing);
@@ -55,7 +55,7 @@
     <div class="name-and-price-container">
         <p class="name-text">{name}</p>
         <span class="name-price-gap"></span>
-        <p class="price-text">{price}</p>
+        <p class="price-text">{getFormattedPrice(price)}</p>
     </div>
 </div>
 

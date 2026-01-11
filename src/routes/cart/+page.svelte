@@ -1,7 +1,12 @@
-<script>
-    import { TestCart } from "$lib/code";
+<script lang="ts">
+    import { getFormattedPrice, TestCart } from "$lib/code";
     import CartCard from "$lib/components/CartCard.svelte";
-    import { onMount } from "svelte";
+
+    function getTotal(): number {
+        return TestCart.map((item) => item.listing.price).reduce(
+            (a, b) => a + b,
+        );
+    }
 </script>
 
 <div id="content-container">
@@ -15,6 +20,7 @@
             {/if}
         {/each}
     </div>
+    <p id="total-text">Total: {getFormattedPrice(getTotal())}</p>
     <button type="button" id="checkout-button" class="dark">
         Proceed to Checkout
     </button>
@@ -40,6 +46,13 @@
         font-size: 2em;
     }
 
+    #total-text {
+        color: var(--md-sys-color-on-surface);
+        font-size: 2em;
+
+        margin: 2vh 0;
+    }
+
     #checkout-button {
         background-color: var(--md-sys-color-inverse-surface);
 
@@ -50,7 +63,7 @@
         width: 50%;
         aspect-ratio: 8 / 1;
 
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
     #checkout-button:hover {
@@ -59,6 +72,13 @@
         border: 2px solid var(--md-sys-color-primary);
 
         cursor: pointer;
+    }
+
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        #checkout-button {
+            width: 80%;
+        }
     }
 
     /* Large devices (laptops/desktops, 992px and up) */
