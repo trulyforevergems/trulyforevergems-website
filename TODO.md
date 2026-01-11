@@ -1,7 +1,6 @@
 # General
 
 - [ ] Supabase
-- [x] **Implement cart**
 - [ ] Move to Vercel
 - [ ] Implement payment processing with Stripe
 
@@ -11,6 +10,8 @@
 - [ ] CSS Style Guide
 
 # Mobile
+
+<!-- Collapsable navbar isn't a priority while there's only three nav options. -->
 
 - [ ] Collapsable navbar
 - [ ] Properly adjust sized of text, images, and buttons
@@ -23,4 +24,5 @@
 
 # Cart
 
-- [ ] Add "total" section
+- [x] Add "total" section
+- [ ] Implement checkout
