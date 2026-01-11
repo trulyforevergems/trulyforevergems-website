@@ -15,9 +15,9 @@
             {/if}
         {/each}
     </div>
-    <button type="button" id="checkout-button" class="dark"
-        >Proceed to Checkout</button
-    >
+    <button type="button" id="checkout-button" class="dark">
+        Proceed to Checkout
+    </button>
 </div>
 
 <style>
