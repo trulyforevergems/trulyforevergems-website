@@ -59,10 +59,20 @@
     .text-container {
         background-color: var(--md-sys-color-surface);
         padding: 2vh 2vw;
-        width: 50%;
+        width: 60%;
     }
 
     .text-container > :is(h1, p) {
         color: var(--md-sys-color-on-surface);
+    }
+
+    @media (max-width: 600px) {
+        .background-container {
+            background: none;
+        }
+
+        .text-container {
+            width: 100%;
+        }
     }
 </style>

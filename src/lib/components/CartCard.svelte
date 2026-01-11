@@ -2,16 +2,22 @@
     import type { CartItem } from "../code/types";
     import increase_icon from "$lib/assets/icons/add_1_icon.svg";
     import decrease_icon from "$lib/assets/icons/remove-icon.svg";
+    import trash_icon from "$lib/assets/icons/trash_can.svg";
+    import { TestCart } from "$lib/code";
 
     let { listing, quantity }: CartItem = $props();
     const { name, imageUrl, price, colors } = $derived(listing);
 
     function decrease_quantity() {
-        quantity = Math.max(quantity - 1, 1);
+        quantity = Math.max(quantity - 1, 0);
+        if (quantity == 0) {
+            /* TODO: Remove item from cart */
+        }
     }
 
     function increase_quantity() {
         quantity = Math.min(quantity + 1, 10);
+        console.debug(`Test Cart: ${JSON.stringify(TestCart)}`);
     }
 
     function number_to_ordinal(num: number): string {
@@ -35,7 +41,10 @@
         </div>
         <div class="quantity-buttons-container">
             <button type="button" onclick={decrease_quantity}>
-                <img src={decrease_icon} alt="Decrease Icon" />
+                <img
+                    src={quantity > 1 ? decrease_icon : trash_icon}
+                    alt="Decrease Icon"
+                />
             </button>
             <span>{quantity}</span>
             <button type="button" onclick={increase_quantity}>
@@ -43,25 +52,11 @@
             </button>
         </div>
     </div>
-    <div class="name-and-style-container">
-        <p>{name}</p>
-        <div class="colors-list">
-            {#each colors as color, index}
-                <div class="colors-list-item">
-                    <label for="from-color-num-{index}"
-                        >{number_to_ordinal(index + 1)} Color:&ensp;
-                    </label>
-                    <input
-                        type="color"
-                        name="from-color-num-{index}"
-                        value={color}
-                        disabled
-                    />
-                </div>
-            {/each}
-        </div>
+    <div class="name-and-price-container">
+        <p class="name-text">{name}</p>
+        <span class="name-price-gap"></span>
+        <p class="price-text">{price}</p>
     </div>
-    <p>{price}</p>
 </div>
 
 <style>
@@ -69,14 +64,15 @@
         margin: 2vh 2vw;
 
         display: grid;
-        grid-template-columns: 2fr 3fr 1fr;
+        grid-template-columns: 1fr 1fr;
         align-items: center;
     }
 
     .image-and-quantity-container {
         display: grid;
-        grid-template-rows: 6fr 1fr;
+        grid-template-rows: auto auto;
         row-gap: 1.5vh;
+        justify-items: center;
     }
 
     .image-container {
@@ -97,38 +93,75 @@
         width: 50%;
         display: grid;
         grid-template-columns: 2fr 1fr 2fr;
+        justify-items: center;
     }
 
-    .quantity-buttons-container > span {
+    .quantity-buttons-container span {
+        font-size: 1.5em;
+
         display: flex;
         align-items: center;
         justify-content: center;
     }
 
-    button {
+    .quantity-buttons-container button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+        width: 50%;
+
         cursor: pointer;
         border-radius: 50px;
     }
 
-    .name-and-style-container {
-        align-self: baseline;
+    .name-and-price-container {
+        width: 100%;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
     }
 
-    .name-and-style-container p {
-        font-size: 2em;
+    /* .name-and-price-container p {
+        font-size: 1.5em;
+    } */
+
+    .name-text {
+        font-weight: bold;
     }
 
-    .colors-list {
-        padding-left: 3vw;
+    .name-price-gap {
+        width: 10%;
     }
 
-    .colors-list-item {
-        display: grid;
-        grid-template-columns: 1fr 3fr;
+    /* Extra small devices (phones, 600px and down) */
+    @media only screen and (max-width: 600px) {
+        .cart-card {
+            column-gap: 10%;
+        }
+
+        .image-container {
+            width: 100%;
+        }
+
+        .quantity-buttons-container {
+            width: 100%;
+        }
+
+        .name-and-price-container {
+            flex-direction: column;
+        }
+
+        .price-text {
+            justify-self: baseline;
+        }
     }
 
-    .colors-list-item input[type="color"] {
-        border: none;
-        width: 20%;
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        .name-and-price-container p {
+            font-size: 1.5em;
+        }
     }
 </style>

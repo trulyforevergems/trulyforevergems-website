@@ -1,6 +1,7 @@
 <script>
     import { TestCart } from "$lib/code";
     import CartCard from "$lib/components/CartCard.svelte";
+    import { onMount } from "svelte";
 </script>
 
 <div id="content-container">
@@ -58,5 +59,12 @@
         border: 2px solid var(--md-sys-color-primary);
 
         cursor: pointer;
+    }
+
+    /* Large devices (laptops/desktops, 992px and up) */
+    @media only screen and (min-width: 992px) {
+        #content-container {
+            padding: 5vh 15vw;
+        }
     }
 </style>
